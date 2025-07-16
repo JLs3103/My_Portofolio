@@ -72,7 +72,7 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Animate elements on scroll
     function animateOnScroll() {
-        const elements = document.querySelectorAll('.project-card, .skill-item');
+        const elements = document.querySelectorAll('.project-card, .skill-item, .education-card');
         
         elements.forEach(element => {
             const elementTop = element.getBoundingClientRect().top;
@@ -216,8 +216,8 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }, observerOptions);
     
-    // Observe all animated elements
-    const animatedElements = document.querySelectorAll('.project-card, .skill-item');
+    // Observe all animated elements including education card
+    const animatedElements = document.querySelectorAll('.project-card, .skill-item, .education-card');
     animatedElements.forEach(element => {
         observer.observe(element);
     });
@@ -245,7 +245,7 @@ document.addEventListener('DOMContentLoaded', function() {
     animateOnScroll();
     
     // Add loading class to elements for initial animation
-    const loadingElements = document.querySelectorAll('.project-card, .skill-item');
+    const loadingElements = document.querySelectorAll('.project-card, .skill-item, .education-card');
     loadingElements.forEach((element, index) => {
         element.classList.add('loading');
         setTimeout(() => {
@@ -286,6 +286,23 @@ document.addEventListener('DOMContentLoaded', function() {
     
     if (aboutSection) {
         aboutObserver.observe(aboutSection);
+    }
+    
+    // Education section animations
+    const educationSection = document.getElementById('education');
+    const educationObserver = new IntersectionObserver(function(entries) {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const educationCard = entry.target.querySelector('.education-card');
+                if (educationCard) {
+                    educationCard.classList.add('fade-in-up');
+                }
+            }
+        });
+    }, { threshold: 0.3 });
+    
+    if (educationSection) {
+        educationObserver.observe(educationSection);
     }
     
     // Preload images for better performance
