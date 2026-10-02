@@ -74,6 +74,15 @@ html {
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
 }
 
+.project-card[role="link"] {
+    cursor: pointer;
+}
+
+.project-card[role="link"]:focus-visible {
+    outline: 3px solid #9ca3af;
+    outline-offset: 4px;
+}
+
 /* Project image styles */
 .project-image-container {
     overflow: hidden;
@@ -85,6 +94,14 @@ html {
     height: 100%;
     object-fit: cover;
     transition: transform 0.3s ease;
+}
+
+.project-detail-image-container {
+    min-height: 16rem;
+}
+
+.project-detail-image {
+    max-height: 75vh;
 }
 
 .project-card:hover .project-image {
@@ -170,11 +187,12 @@ section {
 }
 
 /* Profile photo styles */
-.profile-photo img {
+.profile-photo {
+    object-position: center 20%;
     transition: transform 0.3s ease;
 }
 
-.profile-photo:hover img {
+.profile-photo:hover {
     transform: scale(1.05);
 }
 

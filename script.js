@@ -284,6 +284,26 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     });
 
+    // Open a project detail page without interfering with the GitHub link.
+    const projectCards = document.querySelectorAll('.project-card[data-project]');
+    projectCards.forEach(card => {
+        const openProject = event => {
+            if (event.target.closest('a')) {
+                return;
+            }
+
+            window.location.href = `project-detail.html?project=${encodeURIComponent(card.dataset.project)}`;
+        };
+
+        card.addEventListener('click', openProject);
+        card.addEventListener('keydown', event => {
+            if (event.key === 'Enter' || event.key === ' ') {
+                event.preventDefault();
+                openProject(event);
+            }
+        });
+    });
+
     // Enhanced skill bar animations
     function animateSkillBars() {
         const skillBars = document.querySelectorAll('.skill-item .bg-gradient-to-r');
