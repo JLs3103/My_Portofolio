@@ -1,4 +1,54 @@
 const projects = {
+    pilot_ide: {
+        title: 'Pilot IDE',
+        image: 'assets/pilot_ide.png',
+        summary: 'Pilot IDE is an AI-powered desktop code editor built to help developers explore, edit, and manage projects in one workspace. It integrates local and cloud AI models with code editing, project tools, and controls for reviewing AI-generated file changes.',
+        role: 'I designed and developed Pilot IDE as a cross-platform application using Go, React, TypeScript, Wails, SQLite, Ollama, and Google Gemini API. My work included building the user interface, implementing the core functionality of the code editor, integrating the AI models for code generation and analysis, and ensuring a smooth user experience.',
+        features: [
+            'Code editing: Monaco Editor with tabs, syntax support, formatting, and snippets.',
+            'AI assistance: Connects to local Ollama models and Google Gemini to answer questions and work with project files.',
+            'Project tools: File explorer, search, integrated terminal, and Git source control.',
+            'Change review: Lets users inspect, accept, or revert AI-generated file changes.'
+        ],
+        challenges: 'Integrating AI models with project files required coordinating the frontend, Go backend, and model-specific tool-calling workflows. I also needed to make AI edits reviewable so users could control whether changes were kept or reverted.',
+        outcome: 'Built a desktop development environment combining code editing, project tools, and AI assistance. Gained experience in Go–React integration, desktop application development, AI model integration, and safer file-change workflows.',
+        technologies: [
+            'Go',
+            'React',
+            'TypeScript',
+            'Wails',
+            'SQLite',
+            'Ollama',
+            'Google Gemini API'
+        ],
+        repository: 'https://github.com/JLs3103/pilot-ide'
+    },
+    profitly: {
+        title: 'Profitly Application',
+        image: 'assets/profitly.png',
+        summary: 'Profitly is a personal finance management application designed to help users track income and expenses, monitor their balance and cash flow, set financial goals, analyze spending through interactive charts, and evaluate their overall financial health. The application also provides financial alerts, profile management, Indonesian and English localization, and light and dark themes.',
+        role: 'I designed and developed Profitly as a cross-platform Flutter application. My work included building the user interface, implementing transaction and financial goal management, integrating the local SQLite database, developing financial calculations and alerts, adding localization and theme support, and implementing profile and password-management features.',
+        features: [
+            'Financial dashboard: Displays balance, income, expenses, cash flow, financial targets, and money health score.',
+            'Transaction management: Allows users to record, view, and analyze income and expenses.',
+            'Financial targets: Helps users create savings goals, set deadlines, and monitor progress.',
+            'Financial alerts: Provides insights about spending changes and estimated cash flow sustainability.',
+            'Charts and progress indicators: Visualizes financial data using interactive charts and progress indicators.',
+            'User profile and security: Supports profile updates, profile images, login, and password changes.',
+            'Localization and themes: Supports Indonesian and English languages, as well as light and dark modes.'
+        ],
+        challenges: 'One of the main challenges was organizing financial data for multiple users while keeping transactions, balances, and targets consistent across the application. This was addressed by using a user-specific SQLite database structure with schema migrations and reusable database helper methods. Another challenge was keeping dashboard data synchronized after transactions or targets changed, which was handled through shared application notifiers and automatic data refreshes.',
+        outcome: 'The project resulted in a functional local personal finance application with transaction tracking, financial goal monitoring, interactive data visualization, financial alerts, and rule-based financial health analysis. Through this project, I gained practical experience in Flutter application development, local database design, state synchronization, data visualization, localization, and responsive user interface implementation. Future improvements may include cloud synchronization, database encryption, online authentication, and a remote backend service.',
+        technologies: [
+            'Flutter',
+            'Dart',
+            'SQLite',
+            'Kotlin',
+            'C++',
+            'Android Gradle'
+        ],
+        repository: 'https://github.com/JLs3103/profitly'
+    },
     profitly: {
         title: 'Profitly Application',
         image: 'assets/profitly.png',
